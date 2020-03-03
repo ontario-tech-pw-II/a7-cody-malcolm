@@ -1,21 +1,21 @@
 #ifndef SAVINGSACCOUNT_H
 #define SAVINGSACCOUNT_H
 
+#include<iostream>
+#include<iomanip>
+
 #include "Account.h"
 
 using namespace std;
 
-class SavingsAccount : public Account{
-	private:
-		double interestRate; // interest rate (percentage) 
-	public:
-	
-		// constructor initializes balance and interest rate SavingsAccount( double, double );
-		SavingsAccount( double, double ); 
+class SavingsAccount: public Account {
+private:
+  double interestRate;
+public:
+  SavingsAccount( double initialBalance, double rate );
+  double calculateInterest();
+  void display(ostream &os) const;
 
-		// determine interest owed
-		double calculateInterest(); 
-
-		void display(ostream &) const;
 };
+
 #endif
